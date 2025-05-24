@@ -1,25 +1,32 @@
-// const mockTodos = [
-//   {
-//     id: 1,
-//     title: 'todo1',
-//     completed: false,
-//   },
-//   {
-//     id: 2,
-//     title: 'todo2',
-//     completed: true,
-//   },
-//   {
-//     id: 3,
-//     title: 'todo3',
-//     completed: false,
-//   }
-// ]
+import { useState } from 'react'
+import { Todos } from './components/Todos'
+
+const mockTodos = [
+  {
+    id: 1,
+    title: 'todo1',
+    completed: false,
+  },
+  {
+    id: 2,
+    title: 'todo2',
+    completed: false,
+  },
+  {
+    id: 3,
+    title: 'todo3',
+    completed: false,
+  }
+]
 
 
-const App: React.FC = () => {
+const App = (): JSX.Element => {
+  const [todos, setTodos] = useState(mockTodos)// explicame que es inferencia y por que no es bueno tipar mucho 
+
   return (
-    <h1>todo mvc</h1>
+    <div className="todoapp">
+    <Todos todos={todos} /> 
+    </div>
   )
 }
 
